@@ -1,0 +1,69 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.User
+
+@{
+    ViewBag.Title = "CreateAccount";
+    Layout = null;
+    
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<title>Tạo Account</title>
+
+<div style="width:200px; margin-left: 400px;">
+    <h3>Tạo mới Account</h3>
+    @using (Html.BeginForm("CreateAccount", "Account", FormMethod.Post, new { ID = "form-create-product", @class = "form-group" }))
+    {
+
+        <div class="control-group">
+            <b><label class="control-label">Tên đầy đủ: </label></b>
+            @Html.TextBoxFor(x => x.FullName, new { @class = "modify form-control" })
+            @Html.ValidationMessageFor(x => x.FullName)
+        </div>
+
+
+        <div class="control-group">
+            <b><label class="control-label">UserName: </label> </b>
+            @Html.TextBoxFor(x => x.UserName, new { @class = "modify form-control" })
+            @Html.ValidationMessageFor(x => x.UserName)
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Password: </label> </b>
+            @Html.PasswordFor(x => x.Password, new { @class = "modify form-control" })
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        
+        <div class="control-group">
+            <b><label class="control-label">Xác nhận Password: </label> </b>
+            @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "modify form-control" })
+            @Html.ValidationMessageFor(x => x.ConfirmPassword)
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Tuổi: </label> </b>
+            @Html.TextBoxFor(x => x.Age, new { @class = "modify form-control" })
+           
+        </div>
+
+        <div class="control-group">
+            <b>@Html.LabelFor(x => x.Gender) </b>
+            @Html.DropDownListFor(model => model.Gender, new List<SelectListItem>() { new SelectListItem { Text = "Male", Value = "False", Selected = true }, new SelectListItem { Text = "Female", Value = "True" } }, new { @class = "modify form-control" })
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Số điện thoại: </label> </b>
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "modify form-control" })          
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Email: </label> </b>
+            @Html.TextBoxFor(x => x.Email, new { @class = "modify form-control" })
+           
+        </div>
+        <br />
+
+        <input class="btn btn-primary" type="submit" value="Create" />
+    }
+</div>
+
+

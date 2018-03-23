@@ -1,0 +1,289 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.Product
+
+@{
+    ViewBag.Title = "Chỉnh sửa sản phẩm";
+}
+
+
+@*<h2>CHỈNH SỬA SẢN PHẨM</h2>*@
+
+<form id="FormUpLoadImages" method="post" enctype="multipart/form-data">
+
+    <label><b>Chọn hình ảnh: </b></label>
+
+    <input class="btn btn-default" type="file" title="search" multiple="" id="InputImages" name="Images" />
+</form>
+
+<div id="UploadImages">
+    <ul>
+
+        @for (int i = 0; i < @Model.Images.Count; i++)
+        {
+            <li style="list-style:none; float:left">
+                <img src="/Images/@Model.Images[i].Name" style=" width: 150px; height: 150px" />
+                <br />
+                <button class=" btn btn-danger" id="DeleteImage" data-imagename="@Model.Images[i].Name" data-imageid="@Model.Images[i].ID">Delete</button>
+            </li>
+        }
+
+    </ul>
+</div>
+
+
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post, new
+{
+    id = "form-update-product",
+    @class = "form-group"
+}))
+{
+
+    <div class="control-group">
+        @Html.TextBoxFor(x => x.ID, new { @class = "modify form-control", @type = "hidden" })
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Tên sản phẩm: </label></b>
+        @Html.TextBoxFor(x => x.Name, new { @class = "modify form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
+    </div>
+
+
+    <div class="control-group">
+        <b><label class="control-label">Thương hiệu: </label> </b>
+        @Html.DropDownListFor(x => x.Brand.ID, (SelectList)ViewBag.Brands, "-- Chọn thương hiệu --", new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Loại sản phẩm: </label> </b>
+        @Html.DropDownListFor(x => x.Category.ID, (SelectList)ViewBag.Categories, new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Loại sản phẩm con:  </label></b>
+        @*<select id="Level2Category" name="Level2Category" class="modify form-control"> </select>*@
+
+        @Html.DropDownListFor(x => x.Level2Category.ID, (SelectList)ViewBag.Level2Categories, new { @id = "Level2Category", @class = "modify form-control" })
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Độ tuổi: </label> </b>
+        @Html.DropDownListFor(x => x.AgeType.ID, (SelectList)ViewBag.AgeTypes, "-- Chọn độ tuổi --", new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Xuất sứ: </label> </b>
+        @Html.DropDownListFor(x => x.CountryType.ID, (SelectList)ViewBag.CountryTypes, "-- Chọn xuất sứ--", new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Giá bán lẻ: </label> </b>
+        @Html.TextBoxFor(x => x.Price, new { @class = "modify form-control" })
+        @Html.ValidationMessageFor(x => x.Price)
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Giá sỉ: </label> </b>
+        @Html.TextBoxFor(x => x.WholesalePrice, new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Ghi chú sỉ: </label> </b>
+        @Html.TextBoxFor(x => x.WholesaleDescription, new { @class = "modify form-control" })
+        @Html.ValidationMessageFor(x => x.WholesaleDescription)
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Giảm giá: </label> </b>
+        @Html.TextBoxFor(x => x.DiscountPrice, new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Số lượng: </label> </b>
+        @Html.TextBoxFor(x => x.Quantity, new { @class = "modify form-control" })
+
+    </div>
+
+
+    <div class="control-group">
+        <b><label class="control-label">Mô tả ngắn: </label> </b>
+        @Html.TextAreaFor(x => x.ShortDescription, new { @class = "modify form-control" })
+        @Html.ValidationMessageFor(x => x.ShortDescription)
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Mô tả dài: </label> </b>
+        @Html.TextAreaFor(x => x.LongDescription, new { @class = "modify form-control" })
+        @Html.ValidationMessageFor(x => x.LongDescription)
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Chi tiết thương hiệu: </label> </b>
+        @Html.TextBoxFor(x => x.BrandDetail, new { @class = "modify form-control" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Còn hàng hay không? </label></b>
+        @Html.CheckBoxFor(x => x.InStock, new { @class = "modify" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Hiện ở trang bán lẻ: </label> </b>
+        @Html.CheckBoxFor(x => x.IsPublic, new { @class = "modify" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Ẩn hoàn toàn: </label> </b>
+        @Html.CheckBoxFor(x => x.IsHidden, new { @class = "modify" })
+
+    </div>
+
+    <div class="control-group">
+        <b><label class="control-label">Vị trí sắp xếp </label></b>
+        @Html.TextBoxFor(x => x.OrderIndex, new { @class = "modify form-control" })
+
+    </div>
+
+
+    <div class="control-group">
+        <b><label class="control-label">Mục hiển thị: </label> </b>
+        @Html.DropDownListFor(x => x.Mode.ID, (SelectList)ViewBag.Modes, new { @class = "modify form-control" })
+
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Update" />
+}
+
+
+
+@section Scripts
+{
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+    <script src="~/Scripts/tinymce/tinymce.js"></script>
+    <script src="~/Scripts/tinymce/main.js"></script>
+
+    <script>
+
+        $('#Category_ID').bind("change", function () {
+            var MainCategoryID = $('#Category_ID').val();
+            GetLevel2CategoriesByMainCategoryID(MainCategoryID);
+        });
+
+        $('#InputImages').bind("change", function () {
+            AutoUpLoadImages();
+        });
+
+        $('#UploadImages').on('click', '#DeleteImage', function () {
+
+            var ImageID = $(this).attr("data-imageid");
+            var ImageName = $(this).attr("data-imagename");
+
+            DeleteImage(ImageID, ImageName);
+
+            $(this).parent().remove();
+            $("input[value='" + ImageName + "']").remove();
+        });
+
+        function RenderLevel2CategoryHTML(Level2Categories) {
+
+            var html = '<select id="Level2Category" name="Level2Category">';
+
+            for (var i = 0; i < Level2Categories.length; i++) {
+                html += '<option'
+            }
+
+            html += '</select>';
+        }
+
+        function GetLevel2CategoriesByMainCategoryID(ID) {
+            $.ajax({
+                url: '/Product/GetLevel2CategoriesByRootID/?MainCategoryID=' + ID,
+                type: 'GET',
+                contentType: "aplication/json; charset=utf8",
+                dataType: 'json',
+                success: function (Level2Categories) {
+                    $('#Level2Category').empty();
+                    $.each(Level2Categories, function (i, Level2Category) {
+                        $('#Level2Category').append(new Option(Level2Category.Name, Level2Category.ID));
+                    });
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+        }
+
+        function AutoUpLoadImages() {
+
+            var data = new FormData();
+            var totalImages = document.getElementById("InputImages").files.length;
+
+            for (var i = 0; i < totalImages; i++) {
+                var Image = document.getElementById("InputImages").files[i];
+                data.append("Image", Image);
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/Product/UploadImages',
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (ImageNames) {
+                    PreviewImages(ImageNames);
+                    RenderInputHiddenImageName(ImageNames);
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+
+            e.preventDefault();
+
+            $('#FormUpLoadImages').submit();
+        }
+
+        function PreviewImages(ImageNames) {
+            var html = '';
+            for (var i = 0; i < ImageNames.length; i++) {
+                html += '<li style="list-style:none; width="100px"; float:left;"><img src="/Images/' + ImageNames[i] + '" width="150px" height="150px"/></br><button class = "btn btn-danger" href="#" id="DeleteImage" data-imagename="' + ImageNames[i] + '">Delete</button></li>';
+            }
+            $('#UploadImages ul').append(html);
+        }
+
+        function DeleteImage(ImageID, ImageName) {
+
+            $.ajax({
+                type: 'POST',
+                url: '/Product/DeleteImage',
+                data: { ImageID: ImageID, ImageName: ImageName },
+                success: function () {
+
+                },
+                error: function () {
+                    alert('error');
+                }
+            });
+
+        }
+
+        function RenderInputHiddenImageName(ImageNames) {
+            var html = '';
+            for (var i = 0; i < ImageNames.length; i++) {
+                html += '<input type="hidden" name="ImageNames" value="' + ImageNames[i] + '"></input>'
+            }
+            $('#form-update-product').append(html);
+        }
+
+    </script>
+}

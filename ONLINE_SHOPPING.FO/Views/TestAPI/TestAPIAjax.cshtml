@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "TestAPIAjax";
+}
+
+<h2>TestAPIAjax</h2>
+
+<button class="btn-get-values">get brand</button>
+<button class="btn-clear-session">clear session</button>
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+
+<script>
+    function Login() {
+        $.ajax({
+            url: '/User/Login',
+            type: 'POST',
+            headers: {
+                Authorization: 'Bearer ' + sessionStorage.getItem('token')
+            },
+            success: function (values) {
+                console.log('get values success', values);
+            },
+            error: function (jqXHR, stt) {
+                console.log('get values error', jqXHR.statusText || stt);
+            }
+        });
+    }
+
+    function GetBrand() {
+        $.ajax({
+            url: 'http://localhost:19878/api/brand',
+            type: 'GET',
+            headers: {
+                Authorization: 'Bearer ' + sessionStorage.getItem('token')
+            },
+            success: function (values) {
+                console.log('get values success', values);
+            },
+            error: function (jqXHR, stt) {
+                console.log('get values error', jqXHR.statusText || stt);
+            }
+        });
+    }
+</script>

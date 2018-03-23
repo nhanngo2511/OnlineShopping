@@ -1,0 +1,58 @@
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\obj\Debug\eSMSAPI_Demo.csprojResolveAssemblyReference.cache
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\eSMSAPI_Demo.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\eSMSAPI_Demo.pdb
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Net.Http.Formatting.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Http.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Http.WebHost.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Mvc.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Razor.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.Deployment.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.Razor.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\Newtonsoft.Json.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Net.Http.Formatting.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Http.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Http.WebHost.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Mvc.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Razor.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.WebPages.Razor.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\Newtonsoft.Json.xml
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\obj\Debug\eSMSAPI_Demo.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\obj\Debug\eSMSAPI_Demo.pdb
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\Antlr3.Runtime.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\WebGrease.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\Antlr3.Runtime.pdb
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\EntityFramework.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Optimization.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\System.Web.Providers.dll
+C:\Users\dinh\Documents\Visual Studio 2012\Projects\eSMSAPI_Demo\eSMSAPI_Demo\bin\EntityFramework.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\eSMSAPI_Demo.dll.config
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\eSMSAPI_Demo.pdb
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\Newtonsoft.Json.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Net.Http.Formatting.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Http.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Http.WebHost.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Mvc.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Razor.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.Razor.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\Antlr3.Runtime.pdb
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\EntityFramework.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Net.Http.Formatting.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Http.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Http.WebHost.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Mvc.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.Razor.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\bin\System.Web.WebPages.Razor.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\obj\Debug\eSMSAPI_Demo.csprojResolveAssemblyReference.cache
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\obj\Debug\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp\obj\Debug\eSMSAPI_Demo.pdb

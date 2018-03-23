@@ -1,0 +1,139 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Order>
+@using ONLINE_SHOPPING.FO.Helpers;
+@{
+    ViewBag.Title = "Danh sách đơn hàng";
+
+    int TotalRecords = @ViewBag.TotalRecords;
+    float TotalAmount = @ViewBag.TotalAmount;
+}
+
+
+<div class="panel-body">
+    <div class="alert alert-info">
+        <h4>Danh sách đơn hàng</h4>
+    </div>
+    <hr />
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th class ="text-center">Mã đơn hàng</th>
+                    <th class="text-center">Số lượng</th>
+                    <th class="text-center">Tổng tiền</th>
+                    <th class="text-center">Ngày đặt hàng</th>
+                    <th class="text-center">Trạng thái</th>
+                    <th class="text-center">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+               
+
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    int TotalQuantity = 0;
+                    
+                        
+                    for (int j = 0; j < Model[i].OrderProducts.Count; j++)
+                    {
+                        TotalQuantity += Model[i].OrderProducts[j].Quantity;                        
+                    }
+                    
+                    <tr class="row-orderID-@Model[i].ID">
+                        <td class="text-center">
+                            <b>@Html.ActionLink(@Model[i].ID.ToString(), "OrderDetails", "Sale", new { OrderID = Model[i].ID }, new { @class = "text-primary" })</b>
+                        </td>
+                        <td class="text-center">
+                            @TotalQuantity
+                        </td>
+                        <td>
+                            @Html.FormatMoney(Model[i].TotalAmount)
+                        </td>
+                        <td class="text-center">
+                            @Model[i].CreationTime.ToString("dd/MM/yyyy")
+                        </td>
+                        <td class="text-center">
+                            @if (@Model[i].OrderStatus.ID == 1)
+                            {
+                                <label class="label label-warning">@Model[i].OrderStatus.Description</label>
+
+                            }
+                            else
+                            {
+                                if (@Model[i].OrderStatus.ID == 2)
+                                {
+                                    <label class="label label-info">@Model[i].OrderStatus.Description</label>
+                                }
+                                else
+                                {
+                                    if (@Model[i].OrderStatus.ID == 3)
+                                    {
+                                        <label class="label label-success">@Model[i].OrderStatus.Description</label>
+                                    }
+                                    else
+                                    {
+                                        if (@Model[i].OrderStatus.ID == 4)
+                                        {
+                                            <label class="label label-danger">@Model[i].OrderStatus.Description</label>
+                                        }
+                                    }
+                                }
+                            }
+
+
+                        </td>
+                        @if (@Model[i].OrderStatus.ID == 4 || @Model[i].OrderStatus.ID == 3)
+                        {
+                            <td class="text-center"> <a class="btn btn-xs btn-info" href="/Sale/OrderDetails?OrderID=@Model[i].ID"><span class="glyphicon glyphicon-eye-open"></span> Xem</a> </td>
+                        }
+                        else{
+
+                            <td class="text-center">
+                                 <a class="btn btn-xs btn-danger btn-removeorder"  data-orderid="@Model[i].ID"><span class="glyphicon glyphicon-remove"></span> Hủy</a> 
+                                 <a class="btn btn-xs btn-info" href="/Sale/OrderDetails?OrderID=@Model[i].ID"><span class="glyphicon glyphicon-eye-open"></span> Xem</a>
+                            </td>
+                        }
+                        
+                </tr>
+                }
+                <tr>                  
+                    <td colspan="6"> <h3>Tổng tiền:<span style="color: #337ab7"> <strong>@Html.FormatMoney(TotalAmount)</strong></span></h3>  </td>                                     
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    @Html.MyPager(TotalRecords, 6)
+</div>
+
+
+<script>
+
+
+    $('.btn-removeorder').bind("click", function () {
+        var OrderID = $(this).data('orderid');
+
+        var cf = confirm("Bạn có muốn xóa đơn hàng này không?");
+
+        if (cf == true) {
+            CancelOrder(OrderID);
+        }
+    });
+
+    function CancelOrder(OrderID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Sale/CancelOrder',
+            data: { OrderID: OrderID },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    var RowOrderClassName = '.row-orderID-' + OrderID;
+                    $(RowOrderClassName).html(response.OrderHTML);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+</script>

@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Báo giá sỉ sản phẩm";
+  
+}
+
+<form id="formCheckWholesalePrice" method="post" action="">
+    @Html.Label("Nhập các mã sản phẩm: ")
+    <input id="inputIDs" type="text" name="strIDs" class="form-control" style="width: 200px" />
+    <br />
+    <input class="btn btn-primary" id="btnSubmit" type="button" value="Báo giá" />
+</form>
+<br />
+<div id="WholesalePriceProducts"></div>
+
+
+@section scripts{
+
+
+    <script>
+
+        $('#inputIDs').on('keypress', function (e) {
+            if (e.which == 13) {
+                CheckWholesalePrice();
+            }
+            return e.which !== 13;
+        });
+
+        $('#btnSubmit').bind("click", function (e) {
+            CheckWholesalePrice();
+        });
+
+        function CheckWholesalePrice() {
+            var data = $('#inputIDs').val();
+            $.ajax({
+                type: 'POST',
+                url: 'CheckWholesalePrice',
+                data: { strIDs: data },
+                success: function (strHTMLResponse) {
+                    $('#WholesalePriceProducts').html(strHTMLResponse);
+                },
+                error: function () {
+                    alert('Error');
+                }
+            });
+
+        }
+    </script>
+}

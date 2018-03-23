@@ -1,0 +1,5 @@
+﻿
+
+dung de truy xuat du lieu tu database.
+ket qua tra ve la cac object o Entities, 
+va tra ve cho tang business 

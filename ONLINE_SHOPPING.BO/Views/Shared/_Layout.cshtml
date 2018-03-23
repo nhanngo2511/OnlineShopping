@@ -1,0 +1,238 @@
+﻿@using ONLINE_SHOPPING.BO.Commons;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <!-- Barside -->
+    <link href="~/Scripts/barside/barside.css" rel="stylesheet" />
+
+    <!-- My Style -->
+    <link href="~/Content/MyStyle/MyStyle.css" rel="stylesheet" />
+
+</head>
+<body style="margin-top:0px">
+    @{
+        var CurrentAction = HttpContext.Current.Request.RequestContext.RouteData.Values["Action"].ToString();
+    }
+
+    <div class="side-menu">
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="brand-wrapper">
+                    <!-- Hamburger -->
+                    <button type="button" class="navbar-toggle">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <!-- Brand -->
+                    <div class="brand-name-wrapper">
+                        <a class="navbar-brand" href="#">
+                            MYSHOPPING
+                        </a>
+                    </div>
+                    <!-- Search -->
+                    <a data-toggle="collapse" href="#search" class="btn btn-default" id="search-trigger">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </a>
+                    <!-- Search body -->
+                    <div id="search" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <form class="navbar-form" role="search">
+                                <div class="form-group">
+                                    <input id="quicklysearch" type="text" class="form-control" placeholder="Nhập ID sản phẩm">
+                                </div>
+                                <button id="btnquicklysearch" type="button" class="btn btn-default "><span class="glyphicon glyphicon-search"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main Menu -->
+            <div class="side-menu-container">
+                <ul class="nav navbar-nav">
+
+                    <li><a href="http://localhost:1991/ViewSite/Home"><span class="glyphicon glyphicon-home"></span> HOME </a></li>
+
+                    <!-- Dropdown-->
+                    <li class="panel panel-default navbar-toggle" id="dropdown">
+                        <a data-toggle="collapse" href="#dropdown-lvl1">
+                            <span class="glyphicon glyphicon-pencil"></span> QUẢN LÝ SẢN PHẨM <span class="caret"></span>
+                        </a>
+                        <!-- Dropdown level 1 -->
+                        <div id="dropdown-lvl1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+
+                                    @{
+                                        if (CurrentAction == "GetProducts")
+                                        {
+                                            <li class="active"><a href="@Url.Action("GetProducts", "Product")">DANH SÁCH SẢN PHẨM</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("GetProducts", "Product")">DANH SÁCH SẢN PHẨM</a></li>
+                                        }
+
+
+                                        if (CurrentAction == "CreateProduct")
+                                        {
+                                            <li class="active"><a href="@Url.Action("CreateProduct", "Product")">TẠO MỚI SẢN PHẨM</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("CreateProduct", "Product")">TẠO MỚI SẢN PHẨM</a></li>
+                                        }
+
+                                        if (CurrentAction == "UpdateProduct")
+                                        {
+                                            <li class="active"><a href="#">CHỈNH SỬA SẢN PHẨM</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="#">CHỈNH SỬA SẢN PHẨM</a></li>
+                                        }
+
+                                        if (CurrentAction == "CheckWholesalePrice")
+                                        {
+                                            <li class="active"><a href="@Url.Action("CheckWholesalePrice", "Product")">BÁO GIÁ SỈ SẢN PHẨM</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("CheckWholesalePrice", "Product")">BÁO GIÁ SỈ SẢN PHẨM</a></li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#dropdown-lvl2">
+                            <span class="glyphicon glyphicon-list"></span> ĐƠN HÀNG <span class="caret"></span>
+                        </a>
+                        <div id="dropdown-lvl2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    @{
+
+                                        if (CurrentAction == "GetOrders")
+                                        {
+                                            <li class="active"><a href="@Url.Action("GetOrders", "Order")">DANH SÁCH ĐƠN HÀNG</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("GetOrders", "Order")">DANH SÁCH ĐƠN HÀNG</a></li>
+                                        }
+
+
+                                        if (CurrentAction == "GetOrdersNeedToShipped")
+                                        {
+                                            <li class="active"><a href="@Url.Action("GetOrdersNeedToShipped", "Order")">ĐƠN HÀNG CẦN GIAO</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("GetOrdersNeedToShipped", "Order")">ĐƠN HÀNG CẦN GIAO</a></li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    <li class="panel panel-default" id="dropdown">
+                        <a data-toggle="collapse" href="#dropdown-lvl3">
+                            <span class="glyphicon glyphicon-list"></span> KHÁCH HÀNG <span class="caret"></span>
+                        </a>
+                        <div id="dropdown-lvl3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="@Url.Action("SendSms", "Customer")">GỬI SMS CHO KHÁCH HÀNG</a></li>
+                                    <li><a href="@Url.Action("SMSSentList", "Customer")">DANH SÁCH TIN NHẮN</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="container-fluid">
+        <div class="side-body">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+
+                        @{
+                            @*if (Session["User_Session"] != null)
+                                {
+                                    User us = (User)Session[Constant.UserSession];
+                                    <li><a href="#">@us.FullName</a></li>
+                                    <li><a href="/Account/Logout"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                                }*@
+
+
+
+                            string FullName = (User as MyPrincipal).FullName;
+
+                            if (!string.IsNullOrEmpty(FullName))
+                            {
+                                <li><a href="#">@FullName</a></li>
+                                <li><a href="/Account/Logout"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+            </nav>
+            <h1>@ViewBag.Title</h1>
+
+            @*@Html.MvcSiteMap().SiteMapPath()*@
+
+            @RenderBody()
+            <div id="QuickSearchDialog" style="display:none">
+                <div>
+                    <form class="navbar-form" role="search">
+                        <div class="form-group">
+                            <label class="control-label">Nhập ID sản phẩm: </label>
+                            <input id="quicklysearch" class="form-control" placeholder="Nhập ID sản phẩm" type="text">
+                        </div>
+                        <button id="btnquicklysearch" class="btn btn-default quicksearchindialog" type="button">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    <link href="~/Content/themes/base/all.css" rel="stylesheet" />
+
+    <script src="~/Scripts/barside/barside.js"></script>
+
+</body>
+</html>

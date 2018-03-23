@@ -1,0 +1,36 @@
+﻿
+
+@{
+    ViewBag.Title = "CreateBrand";
+}
+
+<h2>CreateBrand</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Brand</legend>
+
+        <div class="editor-label">
+            @Html.Label("NAme")
+        </div>
+        <div class="editor-field">
+            @Html.Editor("Name")
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

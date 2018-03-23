@@ -1,0 +1,90 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Category>
+@using ONLINE_SHOPPING.FO.Commons;
+@{
+    string localhost = System.Web.Configuration.WebConfigurationManager.AppSettings["LocalhostOnlineShopping.BO"];
+
+}
+
+<nav class="navbar navbar-default pull-right mynnavbar">
+    <div class="container-fluid">
+        @*<div class="navbar-header">
+                <a class="navbar-brand" href="/ViewSite/Home" style="font-size: 25px; color: #ee5432;"><b>shopp.my</b></a>
+            </div>*@
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="@Url.Action("ProductList", "ViewSite", new { CategoryID = Model[0].ID})">
+                    @Model[0].Name
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    @for (int j = 0; j < Model[0].Level2Category.Count; j++)
+                    {
+                        <li><a href="@Url.Action("ProductList", "ViewSite", new { CategoryID = Model[0].Level2Category[j].ID})">@Model[0].Level2Category[j].Name</a></li>
+                    }
+                </ul>
+            </li>
+
+            @*-------------*@
+
+            <li>
+                <a href="#">Áo dài TẾT</a>
+            </li>
+
+            <li>
+                <a href="#">
+                    SP khyến mãi                  
+                </a>
+            </li>
+
+            <li class="dropdown">
+
+                <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="@Url.Action("ProductList", "ViewSite", new { CategoryID = Model[1].ID})">
+                    @Model[1].Name
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    @for (int j = 0; j < Model[1].Level2Category.Count; j++)
+                    {
+                        <li><a href="@Url.Action("ProductList", "ViewSite", new { CategoryID = Model[1].Level2Category[j].ID})">@Model[1].Level2Category[j].Name</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="\ViewSite\Contact">
+                    Contact
+                </a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            @{              
+                if (HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    string FullName = (User as MyPrincipal).FullName;
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle dropbtn" data-toggle="dropdown" href="">
+                            <span class="glyphicon glyphicon-user"></span> @FullName
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/Sale/OrderList">Danh sách đơn hàng</a></li>
+                            <li><a href="/User/ViewProfile">Xem thông tin cá nhân</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/User/Logout"><span class="glyphicon glyphicon-log-out"></span> Sign out</a></li>
+                }
+                else
+                {
+                    <li><a href="/User/Login"><span class="glyphicon glyphicon-log-in"></span> Sign in</a></li>
+                }
+            }
+
+        </ul>
+        <div id="cart">
+            @{
+                Html.RenderAction("CartItemList", "Cart");
+            }
+        </div>
+
+    </div>
+</nav>

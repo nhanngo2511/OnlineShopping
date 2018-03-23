@@ -1,0 +1,157 @@
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.dll.config
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.pdb
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\Newtonsoft.Json.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Net.Http.Formatting.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.WebHost.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Mvc.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Razor.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Razor.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Net.Http.Formatting.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.WebHost.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Mvc.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Razor.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Razor.xml
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo.pdb
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.dll.config
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\eSMSAPI_Demo.pdb
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Newtonsoft.Json.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Net.Http.Formatting.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.WebHost.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Mvc.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Razor.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Razor.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Net.Http.Formatting.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Http.WebHost.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Mvc.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.Razor.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\System.Web.WebPages.Razor.xml
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\obj\Debug\eSMSAPI_Demo.pdb
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Quartz.dll
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Quartz.pdb
+C:\Users\sang\Desktop\code Demo Json\eSMSAPI_Demo_CSharp_JSON\bin\Quartz.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.dll.config
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.pdb
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Microsoft.Web.Infrastructure.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Newtonsoft.Json.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Quartz.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Net.Http.Formatting.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.WebHost.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Mvc.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Razor.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Deployment.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Razor.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Quartz.pdb
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Quartz.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Microsoft.Web.Infrastructure.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Net.Http.Formatting.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.WebHost.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Mvc.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Razor.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Deployment.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Razor.xml
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo.dll
+D:\Company_VIHAT\information vihat\code Demo Json\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo.pdb
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.dll.config
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\eSMSAPI_Demo.pdb
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Microsoft.Web.Infrastructure.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Net.Http.Formatting.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.WebHost.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Mvc.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Razor.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Deployment.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Razor.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Newtonsoft.Json.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Quartz.pdb
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Quartz.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\Microsoft.Web.Infrastructure.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Net.Http.Formatting.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Http.WebHost.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Mvc.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.Razor.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Deployment.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\bin\System.Web.WebPages.Razor.xml
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo.dll
+D:\eSMS\eSMSAPI_Demo_CSharp_JSON_NEW\eSMSAPI_Demo_CSharp_JSON_NEW\obj\Debug\eSMSAPI_Demo.pdb
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.dll.config
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.pdb
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Net.Http.Formatting.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Http.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Http.WebHost.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Mvc.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Razor.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Deployment.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Razor.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Newtonsoft.Json.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Quartz.pdb
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Quartz.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Net.Http.Formatting.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Http.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Http.WebHost.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Mvc.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Razor.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Deployment.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Razor.xml
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo.dll
+C:\Users\dinhthaiha\OneDrive\eSMS\CodeMau\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo.pdb
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.dll.config
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\eSMSAPI_Demo.pdb
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\EntityFramework.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Microsoft.Web.Infrastructure.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Newtonsoft.Json.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Optimization.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Razor.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Deployment.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Razor.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Quartz.pdb
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\Quartz.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\EntityFramework.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Mvc.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.Razor.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Deployment.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\bin\System.Web.WebPages.Razor.xml
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo_JSON.csprojResolveAssemblyReference.cache
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo.dll
+D:\Study\ONLINE_SHOPPING\eSMSAPI_Demo_CSharp_JSON_Rest\obj\Debug\eSMSAPI_Demo.pdb

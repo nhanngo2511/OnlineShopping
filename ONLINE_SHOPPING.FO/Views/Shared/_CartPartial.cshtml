@@ -1,0 +1,79 @@
+﻿@model List<ONLINE_SHOPPING.FO.Models.CartItem>
+@using ONLINE_SHOPPING.FO.Helpers
+
+@{
+    int TotalQuantity = 0;
+    float TotalAmount = @ViewBag.TotalAmount;
+    string localhost = System.Web.Configuration.WebConfigurationManager.AppSettings["LocalhostOnlineShopping.BO"];
+}
+
+
+
+@if (@Model != null)
+{
+    for (int i = 0; i < Model.Count; i++)
+    {
+        TotalQuantity += Model[i].Quantity;
+    }
+}
+
+
+<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> <span class="badge">@TotalQuantity</span> - Items<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-cart" role="menu">
+
+            <li><span style="color:#6394F8; font-size:16px;margin-left:8px;">Tổng tiền:  @Html.FormatMoney(TotalAmount)</span></li>
+            <li class="divider"></li>
+
+            @if (@Model != null)
+            {
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <li>
+                        <span class="item">
+                            <span class="item-left">
+                                <img src="@localhost/Images/@Model[i].Product.DefaultImage" alt="" style="width:50px; height:50px;" />
+                                <span class="item-info">
+                                    <span>@Model[i].Product.Name</span>
+                                    <span>Số lượng: @Model[i].Quantity</span>
+                                </span>
+                            </span>
+                            <span class="item-right">
+                                <button class="btn btn-xs btn-danger pull-right btn-remove-cartitem" value="@Model[i].Product.ID">x</button>
+                            </span>
+                        </span>
+                    </li>
+                }
+            }
+
+
+            <li class="divider"></li>
+            <li><a class="text-center" href="/Cart/ViewCart">Xem giỏ hàng</a></li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+
+    $('.btn-remove-cartitem').bind("click", function (e) {
+        var ProductID = $(this).val();
+        RemoveCartItem(ProductID);
+    });
+
+
+    function RemoveCartItem(ProductID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Cart/RemoveCartItem',
+            data: { ProductID: ProductID },
+            success: function (CartItemsHTML) {
+                $('#cart').html(CartItemsHTML);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+</script>

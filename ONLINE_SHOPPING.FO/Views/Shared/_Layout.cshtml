@@ -1,0 +1,173 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/Content/themes/base/all.css" rel="stylesheet" />*@
+
+</head>
+<body>
+    @{
+        string localhost = System.Web.Configuration.WebConfigurationManager.AppSettings["LocalhostOnlineShopping.BO"];
+    }
+    <div class="container-fluid" style="background-color:#125477">
+
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="container" style="height:300px;">
+            <div class="panel-footer" id="foundationbanner">
+                <br>
+                <a href="/"> <img src="@localhost/Images/logo.png" class="img-thumbnail hidden-xs" height="280" width="200" style="margin-top:130px;"> </a>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="panel-footer">
+                @{
+                    Html.RenderAction("GetCategories", "ViewSite");
+                }
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 hidden-sm hidden-xs">
+                    <div class="panel-footer" style="height:345px;">
+                        @{
+                            Html.RenderAction("GetBrands", "ViewSite");
+                        }
+
+                    </div>
+
+                    @{
+                        var Currentcontroller = HttpContext.Current.Request.RequestContext.RouteData.Values["Action"].ToString();
+
+                        if (Currentcontroller == "Home")
+                        {
+                            <div class="panel-footer">
+                            </div>
+                        }
+
+                    }
+
+                </div>
+
+
+                @*<div class="col-lg-9">
+                        @{
+                            Html.RenderPartial("_SliderImages");
+                        }
+                    </div>*@
+               
+                <div class="col-lg-9">
+                    <div class="panel-footer" style="max-height:1000%;max-width:1000px;">
+
+                        @RenderBody()
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel-footer">
+                        <div class="row">
+
+
+                            @{
+                                Html.RenderAction("FooterView", "ViewSite");
+                            }
+
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <center>
+                                            <img src="@localhost/Images/facebook.png" class="img-circle" alt="Cinque Terre" width="139" height="139">
+
+                                            <h4>FACEBOOK</h4>
+
+                                        </center>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <center>
+                                            <img src="@localhost/Images/insta.jpg" class="img-circle" alt="Cinque Terre" width="139" height="139">
+
+                                            <h4>INSTAGRAM</h4>
+
+                                        </center>
+                                    </div>
+                                    @*<div class="col-lg-4">
+                                            <center>
+                                                <img src="~/Images/flickr.png" class="img-circle" alt="Cinque Terre" width="139" height="139">
+
+                                                <h4>FLICKR</h4>
+
+                                            </center>
+                                        </div>*@
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <br><br><br>
+    </div>
+
+
+
+
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+
+</body>
+</html>
+
+<style>
+    body {
+        background-color: lightgray;
+    }
+
+    #footercompanyinfo {
+        color: gray;
+        font-size: 12px;
+    }
+
+    #foundationbanner {
+        background-color;
+        white;
+        background-image: url("@localhost/Images/494303a2cb59b5103ed095867f3d5dbd.jpg");
+        background-repeat: no-repeat;
+        background-attachment: center;
+        background-position: right;
+        background-size: 100%,100%;
+</style>

@@ -1,0 +1,4 @@
+﻿
+
+Nhan du lieu tu tang DAL va tra ve object tu entities,tra ve du lieu cho tang presentation(FO, BO)
+khong duoc tra ve du lieu cua VIEW, thong thuong khong duoc include system.web, dat biet la system.web.mvc

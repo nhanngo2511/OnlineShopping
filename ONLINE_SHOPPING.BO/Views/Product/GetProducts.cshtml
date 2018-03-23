@@ -1,0 +1,129 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Product>
+@using ONLINE_SHOPPING.BO.Helpers
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    
+}
+
+@{
+    int TotalRecords = @ViewBag.TotalRecords;
+}
+
+
+<br />
+
+@using (Html.BeginForm("GetProducts", "Product", FormMethod.Post, new { @class = "form-group" }))
+{
+    <div class="filter filterID">
+        @Html.Label("ID: ")
+        @Html.TextBox("ID", "", new { @class = "form-control", @style = "width: 150px" })
+    </div>
+
+    <div class="filter">
+        @Html.Label("Thương hiệu: ")
+        @Html.DropDownList("BrandID", (SelectList)ViewBag.brands, "--Tất cả--", new { @class = "form-control", @style = "width: 160px" })
+    </div>
+
+
+    var ListInStockItems = new List<SelectListItem> { new SelectListItem {Text = "--Tất cả--", Value = ""},
+                                                      new SelectListItem {Text = "Còn hàng", Value = "True"},
+                                                      new SelectListItem {Text = "Hết hàng", Value = "False"},
+                                                    };
+
+                                                    <div class="filter filterInStock">
+                                                        @Html.Label("Còn hàng? ")
+                                                        @Html.DropDownList("InStock", ListInStockItems, new { @class = "form-control", @style = "width: 160px" })
+                                                    </div>
+
+
+    var ListIsPulicItems = new List<SelectListItem> { new SelectListItem {Text = "--Tất cả--", Value = ""},
+                                                      new SelectListItem {Text = "Hiện web lẻ", Value = "True"},
+                                                      new SelectListItem {Text = "Ản web lẻ", Value = "False"},
+                                                    };
+
+                                                    <div class="filter">
+                                                        @Html.Label("Hiện web lẻ? ")
+                                                        @Html.DropDownList("IsPublic", ListIsPulicItems, new { @class = "form-control", @style = "width: 160px" })
+                                                    </div>
+
+                                                    <input id="btnfillter" class="btn btn-primary" type="submit" value="Tìm kiếm" />
+}
+
+
+@Html.MyPager(TotalRecords, 10)
+
+
+<p style="font-size:25px;"><b>Số lượng sản phẩm: @TotalRecords.</b></p>
+<div>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Hình ảnh</th>
+            <th>Thông tin</th>
+            <th>Kho</th>
+            <th>Giá</th>
+        </tr>
+
+        @for (int i = 0; i < @Model.Count; i++)
+        {
+            <tr>
+                <td style="width:180px;">
+                    <span>@Html.ActionLink("" + @Model[i].ID, "UpdateProduct", new { ID = @Model[i].ID })</span>
+                    <hr style="color:gray" />
+                    @Model[i].Name
+                    <br />
+                    @if (!(Model[i].Quantity <= 0))
+                    {
+                        <span>CÒN HÀNG</span>
+                    }
+                    else
+                    {
+                        <span style="color:red">HẾT HÀNG</span>
+                    }
+                </td>
+                
+                <td style="text-align:center">
+                    <img src="/Images/@Model[i].DefaultImage" style=" width:150px ;height:150px" />
+                </td>
+
+                <td style="width:250px;">
+                    - Thương hiệu: @Model[i].Brand.Name
+                    <br />
+                    - Nhóm SP: @Model[i].Category.Name
+                    <br />
+                    - Title: @Model[i].Name
+                </td>
+
+                <td style="width:130px;">
+                    - Số lượng: @Model[i].Quantity
+                </td>
+
+                <td style="width:210px;">
+                    - Giá lẻ: @Html.FormatMoney(Model[i].Price)
+                    <br />
+                    - Giá sỉ: @Html.FormatMoney(Model[i].WholesalePrice)
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+@Html.MyPager(TotalRecords, 10)
+
+<script>
+
+    //BasicAuthorizationAPI02();
+
+    //function BasicAuthorizationAPI02() {
+    //    $.ajax({
+    //        type: 'GET',
+    //        //url: 'http://rest.esms.vn/MainService.svc/json/GetBalance/689064197AA3138A04438369182E10/773C171D062FACF6878425F8714FEB',
+    //        url: 'http://localhost:19878/api/brand',
+    //        success: function (data) {
+    //            alert(data[0].Name);
+    //        }           
+    //    });
+    //}
+</script>

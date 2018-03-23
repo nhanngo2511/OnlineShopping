@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ONLINE_SHOPPING.FO.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ONLINE_SHOPPING_FO_MyWebService_MyWebService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:5349/MyWebService.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

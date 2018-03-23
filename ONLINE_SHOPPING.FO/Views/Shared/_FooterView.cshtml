@@ -1,0 +1,32 @@
+﻿@model ONLINE_SHOPPING.FO.Models.Footer
+
+@*Brands List*@
+<div class="col-lg-2">
+    <ul class="list-unstyled">
+        <li>
+            <h4 class="text-primary">THƯƠNG HIỆU</h4>
+        </li>
+
+        @for (int i = 0; i < Model.Brands.Count; i++)
+        {
+            <li><a href="#" id="footercompanyinfo">@Model.Brands[i].Name</a></li>
+        }
+    </ul>
+</div>
+
+@*Categories List*@
+<div class="col-lg-2">
+
+    @for (int i = 0; i < Model.Categories.Count; i++)
+    {
+        <ul class="list-unstyled">
+            <li>
+                <h4 class="text-primary">@Model.Categories[i].Name</h4>
+            </li>
+            @for (int j = 0; j < Model.Categories[i].Level2Category.Count; j++)
+            {
+                <li><a href="#" id="footercompanyinfo">@Model.Categories[i].Level2Category[j].Name</a></li>
+            }
+        </ul>
+    }
+</div>

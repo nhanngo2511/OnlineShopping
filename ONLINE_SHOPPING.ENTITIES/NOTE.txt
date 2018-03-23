@@ -1,0 +1,5 @@
+﻿ // TODO: tang Entities chi de mo phong lai du lieu duoi database
+    // Con khong phai nhu vay thi o tang model theo project do
+
+
+	  //TODO: Tach ra, 1 view thuong co 1 model chinh, va model phu(dung ajax)

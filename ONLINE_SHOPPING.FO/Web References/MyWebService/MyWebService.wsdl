@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ChangeMoneyToUSD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CurrentMoney" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMoneyToUSDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeMoneyToUSDResult" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMoneyToVND">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CurrentMoney" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMoneyToVNDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangeMoneyToVNDResult" type="s:float" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBrands">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBrandsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBrandsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBrand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateBrandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateBrandResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChangeMoneyToUSDSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeMoneyToUSD" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMoneyToUSDSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeMoneyToUSDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMoneyToVNDSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeMoneyToVND" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMoneyToVNDSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeMoneyToVNDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBrands" />
+  </wsdl:message>
+  <wsdl:message name="GetBrandsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateBrandSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateBrand" />
+  </wsdl:message>
+  <wsdl:message name="CreateBrandSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateBrandResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MyWebServiceSoap">
+    <wsdl:operation name="ChangeMoneyToUSD">
+      <wsdl:input message="tns:ChangeMoneyToUSDSoapIn" />
+      <wsdl:output message="tns:ChangeMoneyToUSDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMoneyToVND">
+      <wsdl:input message="tns:ChangeMoneyToVNDSoapIn" />
+      <wsdl:output message="tns:ChangeMoneyToVNDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <wsdl:input message="tns:GetBrandsSoapIn" />
+      <wsdl:output message="tns:GetBrandsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBrand">
+      <wsdl:input message="tns:CreateBrandSoapIn" />
+      <wsdl:output message="tns:CreateBrandSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MyWebServiceSoap" type="tns:MyWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChangeMoneyToUSD">
+      <soap:operation soapAction="http://tempuri.org/ChangeMoneyToUSD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMoneyToVND">
+      <soap:operation soapAction="http://tempuri.org/ChangeMoneyToVND" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <soap:operation soapAction="http://tempuri.org/GetBrands" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBrand">
+      <soap:operation soapAction="http://tempuri.org/CreateBrand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MyWebServiceSoap12" type="tns:MyWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChangeMoneyToUSD">
+      <soap12:operation soapAction="http://tempuri.org/ChangeMoneyToUSD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMoneyToVND">
+      <soap12:operation soapAction="http://tempuri.org/ChangeMoneyToVND" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrands">
+      <soap12:operation soapAction="http://tempuri.org/GetBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBrand">
+      <soap12:operation soapAction="http://tempuri.org/CreateBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyWebService">
+    <wsdl:port name="MyWebServiceSoap" binding="tns:MyWebServiceSoap">
+      <soap:address location="http://localhost:5349/MyWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MyWebServiceSoap12" binding="tns:MyWebServiceSoap12">
+      <soap12:address location="http://localhost:5349/MyWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

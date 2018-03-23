@@ -1,0 +1,53 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Product>
+
+@{
+    ViewBag.Title = "_CheckWholesalePrice";
+}
+
+@using ONLINE_SHOPPING.BO.Helpers
+
+<div id="quicksearchproduct">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Hình ảnh</th>
+            <th>Kho</th>
+            <th>Giá</th>
+        </tr>
+
+        @for (int i = 0; i < @Model.Count; i++)
+        {
+            <tr>
+                <td style="width:180px;">
+                    <span>@Model[i].ID</span>
+                    <hr style="color:gray" />
+                    @Model[i].Name
+                    <br />
+                    @if (Model[i].InStock)
+                    {
+                        <span>CÒN HÀNG</span>
+                    }
+                    else
+                    {
+                        <span style="color:red">HẾT HÀNG</span>
+                    }
+                </td>
+
+                <td style="text-align:center">
+                    <img src="/Images/@Model[i].DefaultImage" style=" width:150px ;height:150px" />
+                </td>
+
+                <td style="width:130px;">
+                    - Số lượng: @Model[i].Quantity
+                </td>
+
+                <td style="width:210px;">
+                    - Giá lẻ: @Html.FormatMoney(Model[i].Price)
+                    <br />
+                    - Giá sỉ: @Html.FormatMoney(Model[i].WholesalePrice)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

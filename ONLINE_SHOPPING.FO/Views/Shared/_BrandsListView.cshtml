@@ -1,0 +1,22 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Brand>
+
+
+<div><h3>Thương hiệu</h3></div>
+<ul class="w3-ul">
+
+    @{
+        int CurrentBrandID = HttpContext.Current.Request.QueryString["BrandID"].AsInt();
+    }
+
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        if (CurrentBrandID == (i + 1))
+        {
+            <li class="w3-hover-red active"><a href="@Url.Action("ProductList", "ViewSite", new { BrandID = Model[i].ID })">@Model[i].Name</a></li>
+        }
+        else
+        {
+            <li class="w3-hover-red"><a href="@Url.Action("ProductList", "ViewSite", new { BrandID = Model[i].ID })">@Model[i].Name</a></li>
+        }
+    }
+</ul>

@@ -1,0 +1,188 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.User
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a class="active" id="login-form-link">Register</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">     
+                            @using (Html.BeginForm("Register", "User", FormMethod.Post, new { ID = "register-form", @class = "form-group"}))
+                            {
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.UserName, new { @id = "username2", @class = "form-control", @placeholder = "Username" })
+                                    @Html.ValidationMessageFor(x => x.UserName)
+                                </div>
+                                <p class="message-allow"></p>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.Password, new { @id = "password", @type = "password", @class = "form-control", @placeholder = "Password" })
+                                    @Html.ValidationMessageFor(x => x.Password)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.TextBoxFor(x => x.ConfirmPassword, new { @id = "confirm-password", @type = "password", @class = "form-control", @placeholder = "Confirm Password" })
+                                    @Html.ValidationMessageFor(x => x.Password)
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.TextBoxFor(x => x.FullName, new { @id = "FullName", @class = "form-control", @placeholder = "FullName" })
+                                    @Html.ValidationMessageFor(x => x.FullName)
+                                </div>
+
+                                <div class="form-group">
+
+                                    @Html.TextBoxFor(x => x.Age, new { @id = "age", @class = "form-control", @placeholder = "Age" })
+                                    @Html.ValidationMessageFor(x => x.Age)
+                                </div>
+
+                                <div class="form-group">
+                                    <b>@Html.Label("Giới tính") </b>
+                                    @Html.DropDownListFor(x => x.Gender, new List<SelectListItem>() { new SelectListItem { Text = "Male", Value = "False", Selected = true }, new SelectListItem { Text = "Female", Value = "True" } }, new { @class = "modify form-control" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.PhoneNumber, new { @id = "PhoneNumber", @class = "form-control", @placeholder = "PhoneNumber" })
+                                    @Html.ValidationMessageFor(x => x.PhoneNumber)
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextBoxFor(x => x.Email, new { @id = "email", @class = "form-control", @placeholder = "Email" })
+                                    @Html.ValidationMessageFor(x => x.Email)
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.TextAreaFor(x => x.Address, new { @id = "Address", @class = "modify form-control", @placeholder = "Địa chỉ (Ví dụ: Số 34, Đường Bùi Viện)" })
+                                </div>
+
+                                <div class="form-group">
+                                    <b><label class="control-label">Thành phố: </label> </b>
+                                    @Html.DropDownListFor(x => x.Ward.District.City.ID, (SelectList)ViewBag.Cities, new { @class = "modify form-control", @id = "lstcities" })
+
+                                    <b><label class="control-label">Quận/Huyện: </label> </b>
+                                    @Html.DropDownListFor(x => x.Ward.District.ID, (SelectList)ViewBag.Districts, new { @class = "modify form-control", @id = "lstdistricts" })
+
+                                    <b><label class="control-label">Phường/Xã: </label> </b>
+                                    @Html.DropDownListFor(x => x.Ward.ID, (SelectList)ViewBag.Wards, new { @class = "modify form-control", @id = "lstwards" })
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" id="register-submit" class="form-control btn btn-register" value="Đăng kí">
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    $('#username2').bind('change', function () {
+        CheckExistUserName($(this).val());
+    });
+
+    function CheckExistUserName(username) {
+        $.ajax({
+            url: '/User/CheckExistUserName',
+            type: 'POST',
+            data: { UserName: username },
+            success: function (Messageresult) {
+
+                var html = '';
+
+                if (Messageresult.result == false) {
+                    html = 'Bạn có thể sử dụng User name này.';
+                    $('.message-allow').css({ 'color': 'green' });
+                } else {
+                    html = 'User name đã tồn tại.';
+                    $('.message-allow').css({ 'color': 'red' });
+                }
+                $('.message-allow').html(html);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    $('#lstcities').bind("change", function () {
+        var CityID = $(this).val();
+        GetDistricts(CityID);
+    });
+
+    $('#lstdistricts').bind("change", function () {
+        var DistrictID = $(this).val();
+        GetWards(DistrictID);
+    });
+
+    function GetDistricts(CityID) {
+        $.ajax({
+            url: '/User/GetDistricts',
+            type: 'POST',
+           // cache: true,
+            data: { CityID: CityID },
+            success: function (Districts) {
+                $('#lstdistricts').empty();
+                $.each(Districts, function (i, District) {
+                    $('#lstdistricts').append(new Option(District.Name, District.ID));
+                });
+                GetWards(Districts[0].ID);
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    function GetWards(DistrictID) {
+        $.ajax({
+            url: '/User/GetWards',
+            type: 'POST',
+           // cache: true,
+            data: { DistrictID: DistrictID },
+            success: function (Wards) {
+                $('#lstwards').empty();
+                $.each(Wards, function (i, Ward) {
+                    $('#lstwards').append(new Option(Ward.Name, Ward.ID));
+                });
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    //$(function () {
+
+    //    $('#login-form-link').click(function (e) {
+    //        $("#login-form").delay(100).fadeIn(100);
+    //        $("#register-form").fadeOut(100);
+    //        $('#register-form-link').removeClass('active');
+    //        $(this).addClass('active');
+    //        e.preventDefault();
+    //    });
+    //    $('#register-form-link').click(function (e) {
+    //        $("#register-form").delay(100).fadeIn(100);
+    //        $("#login-form").fadeOut(100);
+    //        $('#login-form-link').removeClass('active');
+    //        $(this).addClass('active');
+    //        e.preventDefault();
+    //    });
+
+    //});
+
+</script>

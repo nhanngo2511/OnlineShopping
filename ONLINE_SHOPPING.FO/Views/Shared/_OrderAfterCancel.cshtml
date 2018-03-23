@@ -1,0 +1,31 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.Order
+@using ONLINE_SHOPPING.FO.Helpers;
+
+@{
+    int TotalQuantity = 0;
+    
+    for (int j = 0; j < Model.OrderProducts.Count; j++)
+    {
+        TotalQuantity += Model.OrderProducts[j].Quantity;
+    }
+}
+
+
+    <td class="text-center">
+        <b>@Html.ActionLink(@Model.ID.ToString(), "OrderDetails", "Sale", new { OrderID = Model.ID }, new { @class = "text-primary" })</b>
+    </td>
+    <td class="text-center">
+        @TotalQuantity
+    </td>
+    <td>
+        @Html.FormatMoney(Model.TotalAmount)
+    </td>
+    <td class="text-center">
+        @Model.CreationTime.ToString("dd/MM/yyyy")
+    </td>
+    <td class="text-center">
+        <label class="label label-danger">@Model.OrderStatus.Description</label>
+    </td>
+    <td class="text-center">
+        <a class="btn btn-xs btn-info" href="/Sale/OrderDetails?OrderID=@Model.ID"><span class="glyphicon glyphicon-eye-open"></span> Xem</a>
+    </td>

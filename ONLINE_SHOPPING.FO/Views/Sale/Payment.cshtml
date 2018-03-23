@@ -1,0 +1,105 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.Order
+
+@{
+    ViewBag.Title = "Payment";
+}
+<div style="width: 400px;">
+    <form method="post" id="form-create-product" class="form-group">
+
+        <div class="control-group">
+            <b><label class="control-label">Tên người nhận:</label> </b>
+            @Html.TextBoxFor(Model => Model.RecipientName, new { @class = "modify form-control" })
+            @* @Html.ValidationMessage("RecipientName")*@
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Số điện thoại:</label> </b>
+            @Html.TextBoxFor(Model => Model.Phone, new { @class = "modify form-control" })
+            @*@Html.ValidationMessageFor(x => x.Phone)*@
+        </div>
+
+
+        <div class="control-group">
+            <b><label class="control-label">Địa chỉ:</label> </b>
+            @Html.TextAreaFor(Model => Model.Address, new { @class = "modify form-control", @placeholder = "Ví dụ: Số 34, Đường Bùi Viện" })
+            @*@Html.ValidationMessageFor(x => x.Address)*@
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Thành phố: </label> </b>
+            @* @Html.DropDownListFor(model => model.Ward.District.City.ID, (SelectList)ViewBag.Cities, new { @class = "modify form-control", @id = "lstcities" })*@
+            @Html.DropDownList("CityID", (SelectList)ViewBag.Cities, new { @class = "modify form-control", @id = "lstcities" })
+        </div>
+
+        <div class="control-group">
+            <b><label class="control-label">Quận/Huyện: </label> </b>
+            @*@Html.DropDownListFor(model => model.Ward.District.ID, (SelectList)ViewBag.Districts, new { @class = "modify form-control", @id = "lstdistricts" })*@
+            @Html.DropDownList("DistrictID", (SelectList)ViewBag.Districts, new { @class = "modify form-control", @id = "lstdistricts" })
+        </div>
+
+
+        <div class="control-group">
+            <b><label class="control-label">Phường/Xã: </label> </b>
+            @*@Html.DropDownListFor(model => model.Ward.ID, (SelectList)ViewBag.Wards, new { @class = "modify form-control", @id = "lstwards" })*@
+            @Html.DropDownListFor(model => model.Ward.ID, (SelectList)ViewBag.Wards, new { @class = "modify form-control", @id = "lstwards" })
+        </div>
+
+
+        <br />
+        <p>
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Đặt hàng">
+        </p>
+
+    </form>
+</div>
+<script>
+
+
+
+    $('#lstcities').bind("change", function () {
+        var CityID = $(this).val();
+        GetDistrict(CityID);
+
+        var DistrictID = $('#lstdistricts').val()
+        GetWards(DistrictID);
+    });
+
+    $('#lstdistricts').bind("change", function () {
+        var DistrictID = $(this).val();
+        GetWards(DistrictID);
+    });
+
+    function GetDistrict(CityID) {
+        $.ajax({
+            url: '/Cart/GetDistricts',
+            type: 'POST',
+            data: { CityID: CityID },
+            success: function (Districts) {
+                $('#lstdistricts').empty();
+                $.each(Districts, function (i, District) {
+                    $('#lstdistricts').append(new Option(District.Name, District.ID));
+                });
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    function GetWards(DistrictID) {
+        $.ajax({
+            url: '/Cart/GetWards',
+            type: 'POST',
+            data: { DistrictID: DistrictID },
+            success: function (Wards) {
+                $('#lstwards').empty();
+                $.each(Wards, function (i, Ward) {
+                    $('#lstwards').append(new Option(Ward.Name, Ward.ID));
+                });
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+</script>

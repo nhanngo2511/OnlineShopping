@@ -1,0 +1,212 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.Order
+@using ONLINE_SHOPPING.FO.Helpers
+
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    float TotalAmount = 0;
+    string localhost = System.Web.Configuration.WebConfigurationManager.AppSettings["LocalhostOnlineShopping.BO"];
+
+    for (int i = 0; i < Model.OrderProducts.Count; i++)
+    {
+        TotalAmount += (Model.OrderProducts[i].Quantity * Model.OrderProducts[i].Product.Price);
+    }
+}
+
+<div class="panel-body">
+    <div class="alert alert-info">
+        <h3>Chi tiết đơn hàng</h3>
+    </div>
+    <hr />
+</div>
+
+<div class="row">
+
+    <div class="col-xs-6" style="width:367px">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>From: <a href="/">MyShopping</a></h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <b>Trụ sở: </b> 73/8 Hồ Hảo Hớn, P.Cô Giang, Quận 1 <br />
+                    <b>Số điện thoại: </b>0982186199 <br>
+                    <b>Email: </b> <a href="/">myshopping@gmail.com</a><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-6" style="width:480px">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4>To: <a href="#">@Model.RecipientName</a></h4>
+            </div>
+            <div class="panel-body">
+                <p>
+                    <b>Địa chỉ: </b> @Model.Address, P. @Model.Ward.Name, Q. @Model.Ward.District.Name, @Model.Ward.District.City.Name<br>
+                    <b>Số điện thoại: </b> @Model.Phone <br>
+                    <b>Email: </b> <a href="">@Model.User.Email</a><br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-body">
+                @{
+                    if (Model.Shipper != null)
+                    {
+
+                        <div style="float: left; width: 315px">
+                            <b>Tên Shipper: </b> @Model.Shipper.FullName <br />
+                            <b>Số điện thoại Shipper: </b>@Model.Shipper.PhoneNumber <br>
+                            <b>Email: </b> <a href="/">@Model.Shipper.Email</a>
+                        </div>
+                    }
+
+                    else
+                    {
+                        <div style="float: left; width: 315px">
+                            <b>Tên Shipper: </b> Chưa có <br />
+                            <b>Số điện thoại Shipper: </b>Chưa có <br>
+                            <b>Email: </b> <a href="/">Chưa có</a>
+                        </div>
+                    }
+                    <div class="vertical-line" />
+
+                    <div style="float:left; width:450px;text-align:right">
+                        <b>Đặt hàng ngày: </b> @Model.CreationTime.ToString("dd/MM/yyyy")<br>
+
+                        @if (!(Model.ShipmentTime == null))
+                        {
+                            <b>Giao hàng lúc: </b> @Model.ShipmentTime.Value.ToString()<br>
+                        }
+                        else
+                        {
+                            <b>Giao hàng lúc: </b> <span>Chưa có.</span><br>
+                        }
+
+                        @if (!(Model.ShippedTime == null))
+                        {
+                            <b>Nhận hàng lúc: </b> @Model.ShippedTime.Value.ToString()<br>
+                        }
+                        else
+                        {
+                            <b>Nhận hàng lúc: </b> <span>Chưa có.</span><br>
+                        }
+
+                        @if (Model.OrderStatus.ID == 1)
+                        {
+                            <b>Trạng thái: </b><label class="label label-warning ">@Model.OrderStatus.Description</label>
+                        }
+                        else
+                        {
+                            if (@Model.OrderStatus.ID == 2)
+                            {
+                                <b>Trạng thái: </b><label class="label label-info">@Model.OrderStatus.Description</label>
+                            }
+                            else
+                            {
+                                if (@Model.OrderStatus.ID == 3)
+                                {
+                                    <b>Trạng thái: </b><label class="label label-success">@Model.OrderStatus.Description</label>
+                                }
+                                else
+                                {
+                                    if (@Model.OrderStatus.ID == 4)
+                                    {
+                                        <b>Trạng thái: </b><label class="label label-danger">@Model.OrderStatus.Description</label>
+                                    }
+                                }
+                            }
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- / end client details section -->
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="text-center"><strong><span style="margin-right:70px">Danh sách sản phẩm</span></strong></h3>
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <table class="table table-condensed tab table-striped">
+
+                        <tr>
+                            <td><strong>Tên sản phầm</strong></td>
+                            <td class="text-center"><strong>Giá</strong></td>
+                            <td class="text-center"><strong>Số lượng</strong></td>
+                            <td class="text-right"><strong>Thành tiền</strong></td>
+                        </tr>
+
+                        <tbody>
+                            @for (int i = 0; i < Model.OrderProducts.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Html.ActionLink(Model.OrderProducts[i].Product.Name.ToString(), "ProductDetails", "ViewSite", new { ID = Model.OrderProducts[i].Product.ID }, new { @class = "text-primary" })</td>
+                                    <td class="text-center">@Html.FormatMoney(Model.OrderProducts[i].Product.Price)</td>
+                                    <td class="text-center">@Model.OrderProducts[i].Quantity</td>
+                                    <td class="text-right">@Html.FormatMoney((Model.OrderProducts[i].Product.Price * Model.OrderProducts[i].Quantity))</td>
+                                </tr>
+                            }
+
+                            <tr style="border-top: 3px solid;">
+                                <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                <td class="emptyrow"></td>
+                                <td class="emptyrow text-center"><h3><strong>Tổng tiền:</strong><span style="color: #337ab7"> </span></h3></td>
+                                <td class="emptyrow text-right"><h3><span style="color: #337ab7"> <strong>@Html.FormatMoney(@TotalAmount)</strong></span></h3></td>
+                        </tbody>
+                    </table>
+                    <hr />
+                    @{
+                        if (Model.OrderStatus.ID != 4 && Model.OrderStatus.ID != 3)
+                        {
+                            <a class="btn btn-danger btn-lg btn-removeorder" data-orderid="@Model.ID"><span class="glyphicon glyphicon-remove"></span> Hủy đơn hàng</a>
+                            <a class="btn btn-info btn-lg" href="/Sale/OrderList"><span class="glyphicon glyphicon-eye-open"></span> Xem danh sách đơn hàng</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-info btn-lg" href="/Sale/OrderList"><span class="glyphicon glyphicon-eye-open"></span> Xem danh sách đơn hàng</a>
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('.btn-removeorder').bind("click", function () {
+        var OrderID = $(this).data('orderid');
+
+        var cf = confirm("Bạn có muốn xóa đơn hàng này không?");
+
+        if (cf == true) {
+            CancelOrder(OrderID);
+        }
+    });
+
+    function CancelOrder(OrderID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Sale/CancelOrder',
+            data: { OrderID: OrderID },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    location.reload(false);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+</script>

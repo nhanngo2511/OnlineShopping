@@ -1,0 +1,61 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.User
+<link href="~/Content/bootstrap-social.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="panel panel-login">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <a class="active" id="login-form-link">Login</a>
+                        </div>
+                        
+                    </div>
+                    <hr>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form id="login-form" method="post" role="form" style="display: block;">
+
+                                <div class="form-group">
+                                    <input type="text" name="UserName" id="username" class="form-control" placeholder="Username" value="">
+                                    <span class="message-allow"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="Password" id="password" class="form-control" placeholder="Password">
+                                </div>
+                                <div class="form-group text-center" style="margin-left:0px">
+                                    <input type="checkbox" class="" name="remember" id="remember">
+                                    <label for="remember"> Remember Me</label>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-sm-offset-3">
+                                            <input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-login" value="Log In">
+                                            <br />
+                                            <br />
+                                            <a href="/User/LoginFacebook" class="btn btn-block btn-social btn-facebook">
+                                                Đăng nhập bằng Facebook
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="text-center" style="margin-left:0px">
+                                                <a href="/User/Register" id="register-form-link">Register</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

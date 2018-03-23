@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSMSAPI_Demo_JSON", "eSMSAPI_Demo_JSON.csproj", "{5150A82E-7013-4F64-96BD-169D1D4CC14D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEMO", "..\DEMO\DEMO.csproj", "{8C4A6544-19E0-468D-844B-39259697096B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5150A82E-7013-4F64-96BD-169D1D4CC14D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5150A82E-7013-4F64-96BD-169D1D4CC14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5150A82E-7013-4F64-96BD-169D1D4CC14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5150A82E-7013-4F64-96BD-169D1D4CC14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C4A6544-19E0-468D-844B-39259697096B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C4A6544-19E0-468D-844B-39259697096B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C4A6544-19E0-468D-844B-39259697096B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C4A6544-19E0-468D-844B-39259697096B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

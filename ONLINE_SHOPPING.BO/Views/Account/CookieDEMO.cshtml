@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "CookieDEMO";
+    Layout = null;
+
+}
+
+<h2>CookieDEMO</h2>
+
+@if (Request.Cookies["Mycookkie"] != null)
+{
+    var cookie = Request.Cookies["Mycookie"].Values["Name"].ToString();
+    <h1>@cookie</h1>
+}

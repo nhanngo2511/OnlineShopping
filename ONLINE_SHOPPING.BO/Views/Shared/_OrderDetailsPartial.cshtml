@@ -1,0 +1,243 @@
+﻿@model ONLINE_SHOPPING.ENTITIES.Order
+@using ONLINE_SHOPPING.BO.Helpers
+
+@{
+    int TotalQuantity = 0;
+
+    for (int j = 0; j < Model.OrderProducts.Count; j++)
+    {
+        TotalQuantity += Model.OrderProducts[j].Quantity;
+    }
+}
+
+<td style="width:150px">
+    <b>Mã đơn hàng: <span style="color:rgb(0, 122, 255); font-size:24px;">@Model.ID</span></b>
+    <br />
+    <b>Đặt hàng lúc: </b> @Model.CreationTime.ToString()
+    <br />
+    <b>Tổng số lượng: </b> @TotalQuantity
+    <br />
+    @if (Model.OrderStatus.ID == 1)
+    {
+        <b>Trạng thái: </b><label class="label label-warning ">@Model.OrderStatus.Description</label>
+    }
+    else
+    {
+        if (@Model.OrderStatus.ID == 2)
+        {
+            <b>Trạng thái: </b><label class="label label-info">@Model.OrderStatus.Description</label>
+        }
+        else
+        {
+            if (@Model.OrderStatus.ID == 3)
+            {
+                <b>Trạng thái: </b><label class="label label-success">@Model.OrderStatus.Description</label>
+            }
+            else
+            {
+                if (@Model.OrderStatus.ID == 4)
+                {
+                    <b>Trạng thái: </b><label class="label label-danger">@Model.OrderStatus.Description</label>
+                }
+            }
+        }
+    }
+
+</td>
+
+<td style="width: 300px;">
+
+    @for (int j = 0; j < Model.OrderProducts.Count; j++)
+    {
+        <div style="float:left;width:55px">
+            <img src="/Images/@Model.OrderProducts[j].Product.DefaultImage" width="55px;" height="55px;" />
+        </div>
+        <div style="padding-top:5px">
+            [@Model.OrderProducts[j].Product.ID] @Model.OrderProducts[j].Product.Name
+            <br />
+            @{
+        float Total = 0;
+        Total = Model.OrderProducts[j].Product.Price * Model.OrderProducts[j].Quantity;
+            }
+            @Model.OrderProducts[j].Product.Price x @Model.OrderProducts[j].Quantity = @Html.FormatMoney(Total)
+        </div>
+        <br style="clear:both">
+    }
+    <hr style="border-color: #cccccc; ">
+    <div style="float:right">
+
+        <div>
+            <div>
+                Tổng tiền:
+                <span style=" width: 80px; text-align:right">
+                    <b> @Html.FormatMoney(Model.TotalAmount)</b>
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+</td>
+
+<td>
+    <span><b>Tên:</b> @Model.RecipientName</span>
+    <br />
+    <span><b>Số điện thoại:</b> @Model.Phone</span>
+    <br />
+    <span><b>Địa chỉ:</b> @Model.Address, P. @Model.Ward.Name, Q. @Model.Ward.District.Name, @Model.Ward.District.City.Name</span>
+</td>
+
+<td>
+    @if (@Model.OrderStatus.ID == 1)
+    {
+        <a class="btn btn-xs btn-primary btn-setshipment" data-orderid="@Model.ID"><span class="glyphicon glyphicon-triangle-right"></span> Cho đi giao</a>
+        <br />
+        <a style="margin-top:10px" class="btn btn-xs btn-danger btn-removeorder" data-orderid="@Model.ID"><span class="glyphicon glyphicon-remove"></span> Hủy đơn hàng</a>
+        <hr style="border-color: #cccccc; ">
+    }
+    else
+    {
+        if (@Model.OrderStatus.ID == 2)
+        {
+            <a class="btn btn-xs btn-success btn-setshipped" data-orderid="@Model.ID"><span class="glyphicon glyphicon-ok"></span> Đã giao</a>
+            <br />
+            <a style="margin-top:10px" class="btn btn-xs btn-danger btn-removeorder" data-orderid="@Model.ID"><span class="glyphicon glyphicon-remove"></span> Hủy đơn hàng</a>
+            <hr style="border-color: #cccccc; ">
+        }
+    }
+
+    @if (Model.Shipper != null)
+    {
+        <div style="float: left; width: 315px">
+            <b>Tên Shipper: </b> @Model.Shipper.FullName <br />
+            <b>Số điện thoại Shipper: </b>@Model.Shipper.PhoneNumber <br>
+            <b>Email: </b> <a href="/">@Model.Shipper.Email</a>
+        </div>
+    }
+
+    else
+    {
+        <div style="float: left; width: 315px">
+            <b>Tên Shipper: </b> Chưa có <br />
+            <b>Số điện thoại Shipper: </b>Chưa có <br>
+            <b>Email: </b> <a href="/">Chưa có</a>
+        </div>
+    }
+    <div class="vertical-line" />
+
+    <div style="">
+
+        @if (!(Model.ShipmentTime == null))
+        {
+            <b>Giao hàng lúc: </b> @Model.ShipmentTime.Value.ToString()<br>
+        }
+        else
+        {
+            <b>Giao hàng lúc: </b> <span>Chưa có.</span><br>
+        }
+
+        @if (!(Model.ShippedTime == null))
+        {
+            <b>Nhận hàng lúc: </b> @Model.ShippedTime.Value.ToString()<br>
+        }
+        else
+        {
+            <b>Nhận hàng lúc: </b> <span>Chưa có.</span><br>
+        }
+    </div>
+</td>
+<script>
+
+    $('.btn-removeorder').bind("click", function () {
+        var OrderID = $(this).data('orderid');
+
+        var cf = confirm("Bạn có muốn hủy đơn hàng này không?");
+
+        if (cf == true) {
+            CancelOrder(OrderID);
+        }
+    });
+
+    $('.btn-setshipment').bind("click", function () {
+        var OrderID = $(this).data('orderid');
+
+        var cf = confirm("Bạn có muốn chi đi giao đơn hàng này không?");
+
+        if (cf == true) {
+            SetShipmentOrder(OrderID);
+        }
+    });
+
+    $('.btn-setshipped').bind("click", function () {
+        var OrderID = $(this).data('orderid');
+
+        var cf = confirm("Bạn có chắc đã giao đơn hàng này không?");
+
+        if (cf == true) {
+            SetShippedOrder(OrderID);
+        }
+    });
+
+    function CancelOrder(OrderID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Order/CancelOrder',
+            data: { OrderID: OrderID },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    var RowOrderClassName = '.row-orderID-' + OrderID;
+                    $(RowOrderClassName).html(response.OrderHTML);
+                } else {
+                    alert(response.Message);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    function SetShipmentOrder(OrderID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Order/SetShipmentOrder',
+            data: { OrderID: OrderID },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    var RowOrderClassName = '.row-orderID-' + OrderID;
+                    $(RowOrderClassName).html(response.OrderHTML);
+                } else {
+                    alert(response.Message);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    function SetShippedOrder(OrderID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Order/SetShippedOrder',
+            data: { OrderID: OrderID },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    var RowOrderClassName = '.row-orderID-' + OrderID;
+                    $(RowOrderClassName).html(response.OrderHTML);
+                } else {
+                    alert(response.Message);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+
+    $(function () { // will trigger when the document is ready
+        $('.datepicker').datepicker(); //Initialise any date pickers
+    });
+
+</script>

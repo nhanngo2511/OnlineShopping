@@ -1,0 +1,22 @@
+﻿@model List<ONLINE_SHOPPING.ENTITIES.Product>
+
+@{
+    ViewBag.Title = "_CheckWholesalePrice";
+}
+
+@using ONLINE_SHOPPING.BO.Helpers
+
+@for (int i = 0; i < Model.Count; i++)
+{
+    <div id="WholesalePriceDetails">
+        <img src="/Images/@Model[i].DefaultImage" style=" width:150px ;height:150px" />
+        <br />
+        <span>Mã sản phẩm: [@Model[i].ID]</span>
+        <br />
+        <span>Tên sản phẩm: @Model[i].Name</span>
+        <br />
+        <span>Giá bán lẻ: @Html.FormatMoney(Model[i].Price)</span>
+        <br />
+        <span>Giá bán sỉ: @Html.FormatMoney(Model[i].WholesalePrice)</span>
+    </div>
+}

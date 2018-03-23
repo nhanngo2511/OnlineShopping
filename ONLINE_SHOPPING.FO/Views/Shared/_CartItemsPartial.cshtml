@@ -1,0 +1,123 @@
+﻿
+@model List<ONLINE_SHOPPING.FO.Models.CartItem>
+@using ONLINE_SHOPPING.FO.Helpers
+
+@{
+    ViewBag.Title = "Xem giỏ hàng";
+    float TotalAmount = @ViewBag.TotalAmount;
+    string localhost = System.Web.Configuration.WebConfigurationManager.AppSettings["LocalhostOnlineShopping.BO"];
+}
+        <div class="row">
+            <div class="col-xs-8">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th class="text-center">Giá</th>
+                            <th class="text-center">Thành tiền</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td class="col-md-8">
+                                    <div class="media">
+                                        <a class="thumbnail pull-left" href="#"> <img class="media-object" src="@localhost/Images/@Model[i].Product.DefaultImage" style="width: 72px; height: 72px;"> </a>
+                                        <div class="media-body" style="padding-left:5px">
+                                            <h4 class="media-heading"><a href="#">@Model[i].Product.Name</a></h4>
+                                            <h5 class="media-heading"> by <a href="/ViewSite/ProductList?BrandID=@Model[i].Product.Brand.ID">@Model[i].Product.Brand.Name</a></h5>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-2" style="text-align: center">
+                                    <div>
+                                        <input type="text" class="form-control inputQuantity" value="@Model[i].Quantity">
+                                        <input type="hidden" class="form-control inputProductID" value="@Model[i].Product.ID">
+                                    </div>
+                                </td>
+                                <td class="col-sm-1 col-md-4 text-center"><strong>@Html.FormatMoney(Model[i].Product.Price)</strong></td>
+                                <td class="col-sm-1 col-md-3 text-center"><strong>@Html.FormatMoney((Model[i].Product.Price * Model[i].Quantity))</strong></td>
+                                <td class="">
+                                    <button type="button" class="btn btn-danger btn-remove-cartitem" value="@Model[i].Product.ID">
+                                        <span class="glyphicon glyphicon-remove"></span> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td> <h3>Tổng tiền:<span style="color: #337ab7"> <strong>@Html.FormatMoney(@TotalAmount)</strong></span></h3>  </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>
+                                <a href="/" role="button" class="btn btn-primary btn-large"><span class="glyphicon glyphicon-shopping-cart"></span> Tiếp tục mua sắm</a>
+                            </td>
+                            <td>
+                                <a href="/Sale/Payment" role="button" class="btn btn-success btn-large">Thanh Toán <span class="glyphicon glyphicon-play"></span></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+<script>
+
+    $('.inputQuantity').change(function () {
+
+        var ProductID = $(this).next().val();
+        var Quantity = $(this).val();
+
+        UpdateCartItem(ProductID, Quantity);
+    });
+
+    $('.btn-remove-cartitem').bind("click", function (e) {
+
+        var ProductID = $(this).val();
+        RemoveCartItem(ProductID);
+    });
+
+    function RemoveCartItem(ProductID) {
+        $.ajax({
+            type: 'POST',
+            url: '/Cart/RemoveCartItem',
+            data: { ProductID: ProductID },
+            success: function (response) {
+                if (response.length > 0) {
+                    location.reload(false);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    function UpdateCartItem(ProductID, Quantity) {
+        $.ajax({
+            type: 'POST',
+            url: '/Cart/UpdateCartItem',
+            data: { ProductID: ProductID, Quantity: Quantity },
+            success: function (response) {
+                if (response.isSuccess == true) {
+                    $('#cart').html(response.CartHTML);
+                    $('#content').html(response.ItemsCartHTML);
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+</script>
